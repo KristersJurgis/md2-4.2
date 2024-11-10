@@ -85,7 +85,7 @@ namespace md3
 
             Console.WriteLine($"{a}^2 - {b}^2 = ({a} - {b}) * ({a} + {b})");
             Console.WriteLine($"{aSquared} - {bSquared} = ({a - b}) * ({a + b})");
-            Console.WriteLine($"{aSquared - bSquared} = {a - b * a + b}");
+            Console.WriteLine($"{aSquared - bSquared} = {(a - b) * (a + b)}");
             Console.WriteLine($"({a} + {b})^2 = {a}^2 + 2*{a}*{b} + {b}^2");
             Console.WriteLine($"({a} + {b})^2 = {aSquared} + 2*{a}*{b} + {bSquared}");
             Console.WriteLine($"({a} + {b})^2 = {aSquared} + {2 * a * b} + {bSquared}");
@@ -98,25 +98,20 @@ namespace md3
             Console.WriteLine($"{aCube} + {bCube} = {a + b} * ({aSquared} - {a}*{b} + {bSquared})");
             Console.WriteLine($"{aCube + bCube} = ({a + b}) * ({aSquared} - {a * b} + {bSquared})");
             Console.WriteLine($"{aCube + bCube} = {(a + b) * (aSquared - (a * b) + bSquared)}");
-            Console.WriteLine($"{a}^3 - {b}^3 = ({a} - {b}) * ({a}^2 + 2*{a}*{b} + {b}^2)");
-            Console.WriteLine($"{a}^3 - {b}^3 = ({a} - {b}) * ({aSquared} + 2*{a}*{b} + {bSquared})");
-            Console.WriteLine($"{aCube} - {bCube} = ({a} - {b}) * ({aSquared + twoab + bSquared})");
-            Console.WriteLine($"{aCube - bCube} = ({a - b}) * ({aSquared + twoab + bSquared})");
-            Console.WriteLine($"{aCube - bCube} = {(a - b) * (aSquared + twoab + bSquared)}");
+            Console.WriteLine($"{a}^3 - {b}^3 = ({a} - {b}) * ({a}^2 + {a}*{b} + {b}^2)");
+            Console.WriteLine($"{aCube} - {bCube} = ({a - b}) * ({aSquared + a * b + bSquared})");
+            Console.WriteLine($"{aCube - bCube} = {(a - b) * (aSquared + a * b + bSquared)}");
             Console.WriteLine($"{a}^3 + {b}^3 = ({a} + {b}) * ({a}^2 - {a}*{b} + {b}^2)");
+            Console.WriteLine($"{aCube} + {bCube} = ({a + b}) * ({aSquared - a * b + bSquared})");
+            Console.WriteLine($"{aCube + bCube} = {(a + b) * (aSquared - a * b + bSquared)}");
             Console.WriteLine($"({a} + {b})^3 = {aCube} + 3*{aSquared}*{b} + 3*{a}*{bSquared} + {bCube}");
             Console.WriteLine($"({a} + {b})^3 = {aCube} + {threesquaredb} + {threeABSquared} + {bCube}");
-            Console.WriteLine($"({a} + {b})^3 = {aCube} + {threeab} + {threeab} + {bCube}");
-            Console.WriteLine($"{aCube + bCube} = {aCube + threeABSquared + threesquaredb + bCube}");
-            Console.WriteLine($"{a}^3 - {b}^3 = ({a} - {b}) * ({a}^2 - 3*{a}*{b} + {b}^2)");
-            Console.WriteLine($"{aCube} - {bCube} = ({a} - {b}) * ({aSquared} - 3*{a}*{b} + {bSquared})");
-            Console.WriteLine($"{aCube - bCube} = ({a - b}) * ({aSquared} - 3*{a}*{b} + {bSquared})");
-            Console.WriteLine($"{aCube - bCube} = {(a - b) * (aSquared - 3 * a * b + bSquared)}");
+            Console.WriteLine($"{(a + b) * (a + b) * (a + b)} = {aCube + threesquaredb + threeABSquared + bCube}");
             Console.WriteLine($"({a} + {b} + {c})^2 = {a}^2 + {b}^2 + {c}^2 + 2{a}{b} + 2{a}{c}+2{b}{c}");
             Console.WriteLine($"({a} + {b} + {c})^2 = {aSquared} + {bSquared} + {cSquared} + {twoab} + {twoac} + {twobc}");
-            Console.WriteLine($"{(a + b  + c) * (a + b +c)}= {aSquared} + {bSquared} + {cSquared} + {twoab} + {twoac} + {twobc}");
-            Console.WriteLine($"{(a + b + c) * (a + b + c)}= {aSquared + bSquared + cSquared} + {twoab + twoac + twobc}");
-            Console.WriteLine($"{(a + b + c) * (a + b + c)}= {(aSquared + bSquared + cSquared) + (twoab + twoac + twobc)}");
+            Console.WriteLine($"{(a + b  + c) * (a + b +c)} = {aSquared} + {bSquared} + {cSquared} + {twoab} + {twoac} + {twobc}");
+            Console.WriteLine($"{(a + b + c) * (a + b + c)} = {aSquared + bSquared + cSquared} + {twoab + twoac + twobc}");
+            Console.WriteLine($"{(a + b + c) * (a + b + c)} = {(aSquared + bSquared + cSquared) + (twoab + twoac + twobc)}");
             Console.WriteLine();
 
         }
