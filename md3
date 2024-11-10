@@ -1,0 +1,124 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace md3
+{
+    internal class md3
+    {
+        public class colorstr
+        {
+            public ConsoleColor TextColor;
+            public ConsoleColor BackGroundColor;
+            public string Text;
+
+            public colorstr(ConsoleColor textcolor, ConsoleColor backgroundcolor, string text)
+            {
+                TextColor = textcolor;
+                BackGroundColor = backgroundcolor;
+                Text = text;
+            }
+        }
+            
+        public static void WriteConsoleColor(params colorstr[] strings) 
+        {
+            var originalcolor = Console.ForegroundColor;
+            var originlabck = Console.BackgroundColor;
+            foreach (var str in strings)
+            {
+                Console.ForegroundColor = str.TextColor;
+                Console.BackgroundColor = str.BackGroundColor;
+                Console.Write(str.Text);
+            }
+            Console.ForegroundColor = originalcolor;
+            Console.BackgroundColor = originlabck;
+        }
+        public void ja()
+        {
+            WriteConsoleColor(
+                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "***    *** "),
+                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "***** \n"),
+                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "***    *** "),
+                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "***** \n"),
+                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "***    *** "),
+                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "***** \n"),
+                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "***    *** "),
+                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "***** \n"),
+                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "********** "),
+                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "*********** \n"),
+                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "********** "),
+                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "*********** \n")
+
+                ); 
+
+        }
+        public static void Main(string[] args)
+        {
+            md3 program = new md3();
+            program.ja();
+            int a = 0;
+            int b = 0;
+            int c = 0;
+            Console.WriteLine("Ievadiet a ");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("ievadiet b ");
+            b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("ievadiet c ");
+            c = Convert.ToInt32(Console.ReadLine());
+
+            int aSquared = a * a;
+            int bSquared = b * b;
+            int cSquared = c * c;
+            int aCube = a * a * a;
+            int bCube = b * b * b;
+            int cCube = c * c * c;
+            int twoab = 2 * a * b;
+            int twoac = 2 * a * c;
+            int twobc = 2 * b * c;
+            int threeab = 3 * a * b;
+            int threesquaredb = 3 * aSquared * b;
+            int threeABSquared = 3 * a * bSquared;
+
+
+            Console.WriteLine($"{a}^2 - {b}^2 = ({a} - {b}) * ({a} + {b})");
+            Console.WriteLine($"{aSquared} - {bSquared} = ({a - b}) * ({a + b})");
+            Console.WriteLine($"{aSquared - bSquared} = {a - b * a + b}");
+            Console.WriteLine($"({a} + {b})^2 = {a}^2 + 2*{a}*{b} + {b}^2");
+            Console.WriteLine($"({a} + {b})^2 = {aSquared} + 2*{a}*{b} + {bSquared}");
+            Console.WriteLine($"({a} + {b})^2 = {aSquared} + {2 * a * b} + {bSquared}");
+            Console.WriteLine($"{(a+b) * (a+b)} = {aSquared+ twoab + bSquared}");
+            Console.WriteLine($"({a} - {b})^2 = {a}^2 - 2*{a}*{b} + {b}^2");
+            Console.WriteLine($"({a} - {b})^2 = {aSquared} - 2*{a}*{b} + {bSquared}");  
+            Console.WriteLine($"({a} - {b})^2 = {aSquared} - {twoab} + {bSquared}");
+            Console.WriteLine($"{(a - b) * (a - b)} = {aSquared - twoab + bSquared}");
+            Console.WriteLine($"{a}^3 + {b}^3 = ({a} + {b}) * ({a}^2 - {a}*{b} + {b}^2)");
+            Console.WriteLine($"{aCube} + {bCube} = {a + b} * ({aSquared} - {a}*{b} + {bSquared})");
+            Console.WriteLine($"{aCube + bCube} = ({a + b}) * ({aSquared} - {a * b} + {bSquared})");
+            Console.WriteLine($"{aCube + bCube} = {(a + b) * (aSquared - (a * b) + bSquared)}");
+            Console.WriteLine($"{a}^3 - {b}^3 = ({a} - {b}) * ({a}^2 + 2*{a}*{b} + {b}^2)");
+            Console.WriteLine($"{a}^3 - {b}^3 = ({a} - {b}) * ({aSquared} + 2*{a}*{b} + {bSquared})");
+            Console.WriteLine($"{aCube} - {bCube} = ({a} - {b}) * ({aSquared + twoab + bSquared})");
+            Console.WriteLine($"{aCube - bCube} = ({a - b}) * ({aSquared + twoab + bSquared})");
+            Console.WriteLine($"{aCube - bCube} = {(a - b) * (aSquared + twoab + bSquared)}");
+            Console.WriteLine($"{a}^3 + {b}^3 = ({a} + {b}) * ({a}^2 - {a}*{b} + {b}^2)");
+            Console.WriteLine($"({a} + {b})^3 = {aCube} + 3*{aSquared}*{b} + 3*{a}*{bSquared} + {bCube}");
+            Console.WriteLine($"({a} + {b})^3 = {aCube} + {threesquaredb} + {threeABSquared} + {bCube}");
+            Console.WriteLine($"({a} + {b})^3 = {aCube} + {threeab} + {threeab} + {bCube}");
+            Console.WriteLine($"{aCube + bCube} = {aCube + threeABSquared + threesquaredb + bCube}");
+            Console.WriteLine($"{a}^3 - {b}^3 = ({a} - {b}) * ({a}^2 - 3*{a}*{b} + {b}^2)");
+            Console.WriteLine($"{aCube} - {bCube} = ({a} - {b}) * ({aSquared} - 3*{a}*{b} + {bSquared})");
+            Console.WriteLine($"{aCube - bCube} = ({a - b}) * ({aSquared} - 3*{a}*{b} + {bSquared})");
+            Console.WriteLine($"{aCube - bCube} = {(a - b) * (aSquared - 3 * a * b + bSquared)}");
+            Console.WriteLine($"({a} + {b} + {c})^2 = {a}^2 + {b}^2 + {c}^2 + 2{a}{b} + 2{a}{c}+2{b}{c}");
+            Console.WriteLine($"({a} + {b} + {c})^2 = {aSquared} + {bSquared} + {cSquared} + {twoab} + {twoac} + {twobc}");
+            Console.WriteLine($"{(a + b  + c) * (a + b +c)}= {aSquared} + {bSquared} + {cSquared} + {twoab} + {twoac} + {twobc}");
+            Console.WriteLine($"{(a + b + c) * (a + b + c)}= {aSquared + bSquared + cSquared} + {twoab + twoac + twobc}");
+            Console.WriteLine($"{(a + b + c) * (a + b + c)}= {(aSquared + bSquared + cSquared) + (twoab + twoac + twobc)}");
+            Console.WriteLine();
+
+        }
+    }
+}
