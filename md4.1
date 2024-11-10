@@ -1,0 +1,114 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace md_4._1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+
+        {
+            int Num = 0;
+            Console.WriteLine("Ievadiet num: ");
+            Num = Convert.ToInt32(Console.ReadLine());
+            if (Num % 2 == 0) 
+            {
+                Console.WriteLine(Num + " - Pāra Skaitlis");
+            }
+            else
+            {
+                Console.WriteLine(Num + " - Nepāra skaitlis");
+            }
+            Console.WriteLine();
+            
+            Otrs();
+
+        }
+        static void Otrs()
+        {
+            double x = 0;
+            double y = 0;
+
+            Console.WriteLine("Ievadiet x: ");
+            x = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Ievadiet y: ");
+            y = Convert.ToDouble(Console.ReadLine());
+            if ((x == 0) || (y == 0))
+            {
+                Console.WriteLine("Dalīšana ar 0");
+            }
+            else
+            {
+                Console.WriteLine("Rezultāts = " + (x/y));
+            }
+            Console.WriteLine();
+            Tresais();
+        }
+        static void Tresais()
+        {
+            string correctpassword = "Kakis";
+            Console.WriteLine("Ievadiet vārdu: ");
+
+            string input = Console.ReadLine();
+
+            if (input.Length != 5)
+            {
+                Console.WriteLine("Jabūt 5 simboliem");
+            }
+            else 
+            {
+                if (input == correctpassword)
+                {
+                    Console.WriteLine("Parole ievadīta nepareizi");
+                }
+                else
+                {
+                    Console.WriteLine("Parle ievadīta pareizi");
+                }
+            }
+            Console.WriteLine();
+            Ceturtais();
+        }
+        static void Ceturtais()
+        {
+            Console.WriteLine("1-KVadrāta perimetra formula");
+            Console.WriteLine("2-Kvadrāta laukuma formula");
+            Console.WriteLine("3-Kvadrāta diagonāles formula");
+
+            int a = 0;
+            int z = 0;
+            Console.WriteLine("Ievadiet malu a: ");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Izvēleties darbību: ");
+            z = Convert.ToInt32(Console.ReadLine());
+
+
+            if (z == 1)
+            {
+                float P = a * 4;
+                Console.WriteLine("Kvadrāta perimetrs:" + P);
+            }
+            else if (z == 2) 
+            {
+                float S = a * a;
+                Console.WriteLine("Kvadrāta laukums: " + S);
+            }
+            else if (z == 3)
+            {
+                double D = Math.Sqrt(2) * a;
+                Console.WriteLine("Kvadrāta diagonāles = " + D);
+            }
+            else
+            {
+                Console.WriteLine("Tādas darbībs nav!");
+            }
+            Console.WriteLine();
+
+
+        }
+    }
+}
