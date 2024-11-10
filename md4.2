@@ -1,0 +1,149 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace md4._2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double a = 0;
+            Console.WriteLine("Ievadi atzimi (%): ");
+            a = Convert.ToDouble(Console.ReadLine());
+
+            if (a < 50)
+            {
+                Console.WriteLine("Nepietiekami");
+            }
+            else if (a >= 50 && a < 60)
+            {
+                Console.WriteLine("Gandrīz vidēji");
+            }
+            else if (a >= 60 && a < 70)
+            {
+                Console.WriteLine("Vidēji");
+            }
+            else if (a >= 70 && a < 80)
+            {
+                Console.WriteLine("Labi");
+            }
+            else if (a >= 80 && a < 90)
+            {
+                Console.WriteLine("Ļoti Labi");
+            }
+            else if (a >= 90 && a <= 100)
+            {
+                Console.WriteLine("Izcili");
+            }
+            else
+            {
+                Console.WriteLine("Ievadīts nepareizs formāts");
+            }
+            Console.WriteLine();
+            otrs();
+        }
+        static void otrs()
+        {
+            int b = 0;
+            int c = 0;
+            int d = 0;
+
+            Console.WriteLine("Ievadi 1 lenki :");
+            b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ievadi 2 lenki :");
+            c = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ievadi 3 lenki :");
+            d = Convert.ToInt32(Console.ReadLine());
+
+            if (b + c + d != 180)
+            {
+                Console.WriteLine("Ievadītie lēņķi neveido trijsturi.");
+            }
+            else
+            {
+                 if (b == 60 && c == 60 && d == 60)
+                {
+                    Console.WriteLine("Vienādmalu trijstūris");
+                }
+                else if (b == c || c == d || b == d)
+                {
+                    Console.WriteLine("Vienādsānu trijstūris");
+                }
+                else 
+                {
+                    Console.WriteLine("Dazadsanu trijsturis");
+                }
+
+            }
+            tresais();
+        }
+        static void tresais()
+        {
+            int k = 0;
+            
+            Console.WriteLine("Ievadiet patereto elektribas daudzumu (kWh): ");
+            k = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Izvelieties tarifu planu:");
+            Console.WriteLine("1. Majsaimniecibas Tarifs");
+            Console.WriteLine("2. Komercdarbibas Tarifs");
+            Console.WriteLine("3. Rupnieciskais Tarifs");
+            int l = 1;
+            Console.WriteLine("Ievadiet tarifa planu: ");
+            l = Convert.ToInt32(Console.ReadLine());
+            switch (l)
+            {
+                case 1:
+                    Console.WriteLine("Majsaimniecibas Tarifs:");
+                    if (k <= 100)
+                    {
+                        Console.WriteLine($"Jusu Elektribas rekins ir {k * 0.15} EUR.");
+                    }
+                    else if (k >= 101 || k <= 300)
+                    {
+                        Console.WriteLine($"Jusu elektribas rekins ir {k * 0.20} EUR.");
+                    }
+                    else if (k <= 301)
+                    {
+                        Console.WriteLine($"Jusu elektribas rekins ir {k * 0.25} EUR.");
+                    }
+
+                    break;
+                case 2:
+                    Console.WriteLine("Komercdarbibas Tarifs");
+                    if (k <= 200)
+                    {
+                        Console.WriteLine($"Jūsu elektribas rekins ir {k * 0.30} EUR.");
+                    }
+                    else if (k >= 201 || k <= 500)
+                    {
+                        Console.WriteLine($"Jusu elektribas rekins ir {k * 0.35} EUR.");
+                    }
+                    else if (k <= 501)
+                    {
+                        Console.WriteLine($"Jusu elektribas rekins ir {k * 0.40} EUR.");
+                    }
+                    break;
+                case 3:
+                    Console.WriteLine("Rupnieciskais Tarifs");
+                    {
+                        if (k <= 500)
+                        {
+                            Console.WriteLine($"Jusu elektribas rekins ir {k * 0.50} EUR.");
+                        }
+                        else if (k >= 501 || k <= 1000)
+                        {
+                            Console.WriteLine($"Jusu elektribas rekins ir {k * 0.55} EUR.");
+                        }
+                        else if (k >= 1001)
+                        {
+                            Console.WriteLine($"Jusu elektribas rekins ir {k * 0.60} EUR.");
+                        }
+             
+                    }
+                    break;
+            }
+        }
+    }
+}
