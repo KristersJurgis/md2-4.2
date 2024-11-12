@@ -22,38 +22,47 @@ namespace md3
                 Text = text;
             }
         }
-            
-        public static void WriteConsoleColor(params colorstr[] strings) 
+        public static void WriteConsoleColor(colorstr str1, colorstr str2)
         {
-            var originalcolor = Console.ForegroundColor;
-            var originlabck = Console.BackgroundColor;
-            foreach (var str in strings)
-            {
-                Console.ForegroundColor = str.TextColor;
-                Console.BackgroundColor = str.BackGroundColor;
-                Console.Write(str.Text);
-            }
-            Console.ForegroundColor = originalcolor;
-            Console.BackgroundColor = originlabck;
+            var originalColor = Console.ForegroundColor;
+            var originalBack = Console.BackgroundColor;
+            Console.ForegroundColor = str1.TextColor;
+            Console.BackgroundColor = str1.BackGroundColor;
+            Console.Write(str1.Text);
+            Console.ForegroundColor = str2.TextColor;
+            Console.BackgroundColor = str2.BackGroundColor;
+            Console.Write(str2.Text);
+            Console.ForegroundColor = originalColor;
+            Console.BackgroundColor = originalBack;
         }
         public void ja()
         {
             WriteConsoleColor(
-                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "***    *** "),
-                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "***** \n"),
-                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "***    *** "),
-                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "***** \n"),
-                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "***    *** "),
-                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "***** \n"),
-                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "***    *** "),
-                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "***** \n"),
-                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "********** "),
-                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "*********** \n"),
-                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "********** "),
+                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "***     *** "),
+                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "***** \n")
+            );
+            WriteConsoleColor(
+                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "***     *** "),
+                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "***** \n")
+            );
+            WriteConsoleColor(
+                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "***     *** "),
+                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "***** \n")
+            );
+            WriteConsoleColor(
+                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "***     *** "),
+                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "***** \n")
+            );
+
+            WriteConsoleColor(
+                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "*********** "),
                 new colorstr(ConsoleColor.Green, ConsoleColor.Red, "*********** \n")
+            );
 
-                ); 
-
+            WriteConsoleColor(
+                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "*********** "),
+                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "*********** \n")
+            );
         }
         public static void Main(string[] args)
         {
