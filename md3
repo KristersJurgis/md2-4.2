@@ -42,26 +42,26 @@ namespace md3
                 new colorstr(ConsoleColor.Green, ConsoleColor.Red, "***** \n")
             );
             WriteConsoleColor(
-                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "***     *** "),
-                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "***** \n")
+                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "***    ***  "),
+                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "*** **** \n")
             );
             WriteConsoleColor(
-                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "***     *** "),
-                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "***** \n")
+                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "***  ***    "),
+                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "***    **** \n")
             );
             WriteConsoleColor(
-                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "***     *** "),
-                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "***** \n")
-            );
-
-            WriteConsoleColor(
-                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "*********** "),
-                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "*********** \n")
+                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "*******     "),
+                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "***  **** \n")
             );
 
             WriteConsoleColor(
-                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "*********** "),
-                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "*********** \n")
+                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "***  ***    "),
+                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "******* \n")
+            );
+
+            WriteConsoleColor(
+                new colorstr(ConsoleColor.White, ConsoleColor.DarkBlue, "***    ***  "),
+                new colorstr(ConsoleColor.Green, ConsoleColor.Red, "***  ***** \n")
             );
         }
         public static void Main(string[] args)
